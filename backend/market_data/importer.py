@@ -55,7 +55,9 @@ class DataImporter:
         
         # Ensure database tables exist for both Local and Cloud fallback
         LocalBase.metadata.create_all(bind=local_engine)
-        SupabaseBase.metadata.create_all(bind=local_engine)
+        from app.database.connection import supabase_engine
+        if supabase_engine:
+            SupabaseBase.metadata.create_all(bind=supabase_engine)
 
     def import_symbol_timeframe(self, symbol: str, timeframe: str) -> Dict[str, Any]:
         tf_str = timeframe.upper()
@@ -210,38 +212,43 @@ class DataImporter:
         end_time = df['timestamp'].iloc[-1].to_pydatetime() if len(df) > 0 else None
         health_score = val_report.get("health_score", 100.0)
 
-        db_manifest = LocalSessionLocal()
-        try:
-            manifest_entry = db_manifest.query(DatasetManifest).filter(
-                DatasetManifest.symbol == symbol,
-                DatasetManifest.timeframe == timeframe
-            ).first()
+        # 3. Update Dataset Manifest Entry in Local and Supabase Cloud DB
+        sessions = [LocalSessionLocal()]
+        if settings.USE_SUPABASE and SupabaseSessionLocal:
+            sessions.append(SupabaseSessionLocal())
 
-            if not manifest_entry:
-                manifest_entry = DatasetManifest(
-                    symbol=symbol,
-                    timeframe=timeframe,
-                    total_bars=len(df),
-                    start_time=start_time,
-                    end_time=end_time,
-                    health_score=health_score,
-                    last_imported_at=datetime.now()
-                )
-                db_manifest.add(manifest_entry)
-            else:
-                manifest_entry.total_bars = len(df)
-                manifest_entry.start_time = start_time
-                manifest_entry.end_time = end_time
-                manifest_entry.health_score = health_score
-                manifest_entry.last_imported_at = datetime.now()
+        for db_manifest in sessions:
+            try:
+                manifest_entry = db_manifest.query(DatasetManifest).filter(
+                    DatasetManifest.symbol == symbol,
+                    DatasetManifest.timeframe == timeframe
+                ).first()
 
-            db_manifest.commit()
-            self.logger.info(f"[STAGE 5 SUPABASE] Catalog Manifest updated for {symbol} ({timeframe})")
-        except Exception as me:
-            db_manifest.rollback()
-            self.logger.error(f"Error updating dataset manifest: {me}")
-        finally:
-            db_manifest.close()
+                if not manifest_entry:
+                    manifest_entry = DatasetManifest(
+                        symbol=symbol,
+                        timeframe=timeframe,
+                        total_bars=len(df),
+                        start_time=start_time,
+                        end_time=end_time,
+                        health_score=health_score,
+                        last_imported_at=datetime.now()
+                    )
+                    db_manifest.add(manifest_entry)
+                else:
+                    manifest_entry.total_bars = len(df)
+                    manifest_entry.start_time = start_time
+                    manifest_entry.end_time = end_time
+                    manifest_entry.health_score = health_score
+                    manifest_entry.last_imported_at = datetime.now()
+
+                db_manifest.commit()
+            except Exception as me:
+                db_manifest.rollback()
+                self.logger.error(f"Error updating dataset manifest: {me}")
+            finally:
+                db_manifest.close()
+        self.logger.info(f"[STAGE 5 SUPABASE] Catalog Manifest updated for {symbol} ({timeframe})")
 
         return new_records_count
 
