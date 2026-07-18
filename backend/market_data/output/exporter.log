@@ -1,0 +1,503 @@
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Target Symbols: ['XAUUSD']
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Target Timeframes: ['H1']
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Bars per request: 100
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] --- Exporting XAUUSD (H1) ---
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (H1) from MT5...
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.json
+[2026-07-18 15:56:14] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H1  ) -> 100 bars | Files: H1.csv, H1.json
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] Completed 1/1 export tasks successfully.
+[2026-07-18 15:56:14] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Target Symbols: ['XAUUSD', 'GBPUSD', 'EURUSD', 'DXY']
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Target Timeframes: ['M1', 'M5', 'M15', 'H1', 'H4', 'D1']
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Bars per request: 100
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (M1) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (M1) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (M5) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (M5) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (M15) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (M15) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (H1) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (H1) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (H4) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (H4) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting XAUUSD (D1) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for XAUUSDc (D1) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting GBPUSD (M1) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (M1) from MT5...
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M1.csv
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M1.json
+[2026-07-18 15:56:18] [INFO] [market_data_exporter] --- Exporting GBPUSD (M5) ---
+[2026-07-18 15:56:18] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (M5) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M5.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M5.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting GBPUSD (M15) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (M15) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M15.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M15.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting GBPUSD (H1) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (H1) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H1.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H1.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting GBPUSD (H4) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (H4) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H4.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H4.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting GBPUSD (D1) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for GBPUSDc (D1) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\D1.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\D1.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting EURUSD (M1) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (M1) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M1.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M1.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting EURUSD (M5) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (M5) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M5.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M5.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting EURUSD (M15) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (M15) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M15.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M15.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting EURUSD (H1) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (H1) from MT5...
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H1.csv
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H1.json
+[2026-07-18 15:56:19] [INFO] [market_data_exporter] --- Exporting EURUSD (H4) ---
+[2026-07-18 15:56:19] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (H4) from MT5...
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H4.csv
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H4.json
+[2026-07-18 15:56:20] [INFO] [market_data_exporter] --- Exporting EURUSD (D1) ---
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for EURUSDc (D1) from MT5...
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\D1.csv
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\D1.json
+[2026-07-18 15:56:20] [INFO] [market_data_exporter] --- Exporting DXY (M1) ---
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (M1) from MT5...
+[2026-07-18 15:56:20] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:20] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M1)...
+[2026-07-18 15:56:21] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Generating 100 synthetic bars for DX-Y.NYB (M1)...
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.csv
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.json
+[2026-07-18 15:56:22] [INFO] [market_data_exporter] --- Exporting DXY (M5) ---
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (M5) from MT5...
+[2026-07-18 15:56:22] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M5): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M5)...
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.csv
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.json
+[2026-07-18 15:56:22] [INFO] [market_data_exporter] --- Exporting DXY (M15) ---
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (M15) from MT5...
+[2026-07-18 15:56:22] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M15): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M15)...
+[2026-07-18 15:56:22] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.csv
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] --- Exporting DXY (H1) ---
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (H1) from MT5...
+[2026-07-18 15:56:23] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H1)...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.csv
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] --- Exporting DXY (H4) ---
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (H4) from MT5...
+[2026-07-18 15:56:23] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H4): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H4)...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.csv
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] --- Exporting DXY (D1) ---
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching 100 bars for DX-Y.NYB (D1) from MT5...
+[2026-07-18 15:56:23] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (D1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (D1)...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.csv
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.utils] Successfully exported 100 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M1  ) -> 100 bars | Files: M1.csv, M1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M5  ) -> 100 bars | Files: M5.csv, M5.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M15 ) -> 100 bars | Files: M15.csv, M15.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H1  ) -> 100 bars | Files: H1.csv, H1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H4  ) -> 100 bars | Files: H4.csv, H4.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (D1  ) -> 100 bars | Files: D1.csv, D1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M1  ) -> 100 bars | Files: M1.csv, M1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M5  ) -> 100 bars | Files: M5.csv, M5.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M15 ) -> 100 bars | Files: M15.csv, M15.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (H1  ) -> 100 bars | Files: H1.csv, H1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (H4  ) -> 100 bars | Files: H4.csv, H4.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (D1  ) -> 100 bars | Files: D1.csv, D1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M1  ) -> 100 bars | Files: M1.csv, M1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M5  ) -> 100 bars | Files: M5.csv, M5.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M15 ) -> 100 bars | Files: M15.csv, M15.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (H1  ) -> 100 bars | Files: H1.csv, H1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (H4  ) -> 100 bars | Files: H4.csv, H4.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (D1  ) -> 100 bars | Files: D1.csv, D1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (M1  ) -> 100 bars | Files: M1.csv, M1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (M5  ) -> 100 bars | Files: M5.csv, M5.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (M15 ) -> 100 bars | Files: M15.csv, M15.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (H1  ) -> 100 bars | Files: H1.csv, H1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (H4  ) -> 100 bars | Files: H4.csv, H4.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] [SUCCESS] DXY      (D1  ) -> 100 bars | Files: D1.csv, D1.json
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] Completed 24/24 export tasks successfully.
+[2026-07-18 15:56:23] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Target Symbols: ['XAUUSD']
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Target Timeframes: ['M1', 'M5', 'M15', 'H1', 'H4', 'D1']
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Bars per request: 10
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (M1) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (M1) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (M5) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (M5) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (M15) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (M15) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (H1) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (H1) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (H4) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (H4) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] --- Exporting XAUUSD (D1) ---
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Fetching 10 bars for XAUUSDc (D1) from MT5...
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.csv
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.utils] Successfully exported 10 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M1  ) -> 10 bars | Files: M1.csv, M1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M5  ) -> 10 bars | Files: M5.csv, M5.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M15 ) -> 10 bars | Files: M15.csv, M15.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H1  ) -> 10 bars | Files: H1.csv, H1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H4  ) -> 10 bars | Files: H4.csv, H4.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (D1  ) -> 10 bars | Files: D1.csv, D1.json
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] Completed 6/6 export tasks successfully.
+[2026-07-18 16:11:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Target Symbols: ['XAUUSD', 'GBPUSD', 'EURUSD', 'DXY']
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Target Timeframes: ['M1', 'M5', 'M15', 'H1', 'H4', 'D1']
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Bars per request: 5000
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] --- Exporting XAUUSD (M1) ---
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (M1) from MT5...
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.csv
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.json
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] --- Exporting XAUUSD (M5) ---
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (M5) from MT5...
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.csv
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.json
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] --- Exporting XAUUSD (M15) ---
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (M15) from MT5...
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.csv
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.json
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] --- Exporting XAUUSD (H1) ---
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (H1) from MT5...
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.json
+[2026-07-18 16:12:01] [INFO] [market_data_exporter] --- Exporting XAUUSD (H4) ---
+[2026-07-18 16:12:01] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (H4) from MT5...
+[2026-07-18 16:12:08] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.csv
+[2026-07-18 16:12:08] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.json
+[2026-07-18 16:12:08] [INFO] [market_data_exporter] --- Exporting XAUUSD (D1) ---
+[2026-07-18 16:12:08] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for XAUUSDc (D1) from MT5...
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 3850 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.csv
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 3850 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.json
+[2026-07-18 16:12:36] [INFO] [market_data_exporter] --- Exporting GBPUSD (M1) ---
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (M1) from MT5...
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M1.csv
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M1.json
+[2026-07-18 16:12:36] [INFO] [market_data_exporter] --- Exporting GBPUSD (M5) ---
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (M5) from MT5...
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M5.csv
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M5.json
+[2026-07-18 16:12:36] [INFO] [market_data_exporter] --- Exporting GBPUSD (M15) ---
+[2026-07-18 16:12:36] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (M15) from MT5...
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M15.csv
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\M15.json
+[2026-07-18 16:12:37] [INFO] [market_data_exporter] --- Exporting GBPUSD (H1) ---
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (H1) from MT5...
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H1.csv
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H1.json
+[2026-07-18 16:12:37] [INFO] [market_data_exporter] --- Exporting GBPUSD (H4) ---
+[2026-07-18 16:12:37] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (H4) from MT5...
+[2026-07-18 16:12:43] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H4.csv
+[2026-07-18 16:12:43] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\H4.json
+[2026-07-18 16:12:43] [INFO] [market_data_exporter] --- Exporting GBPUSD (D1) ---
+[2026-07-18 16:12:43] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for GBPUSDc (D1) from MT5...
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 3862 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\D1.csv
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 3862 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\GBPUSD\D1.json
+[2026-07-18 16:13:06] [INFO] [market_data_exporter] --- Exporting EURUSD (M1) ---
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (M1) from MT5...
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M1.csv
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M1.json
+[2026-07-18 16:13:06] [INFO] [market_data_exporter] --- Exporting EURUSD (M5) ---
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (M5) from MT5...
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M5.csv
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M5.json
+[2026-07-18 16:13:06] [INFO] [market_data_exporter] --- Exporting EURUSD (M15) ---
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (M15) from MT5...
+[2026-07-18 16:13:06] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M15.csv
+[2026-07-18 16:13:07] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\M15.json
+[2026-07-18 16:13:07] [INFO] [market_data_exporter] --- Exporting EURUSD (H1) ---
+[2026-07-18 16:13:07] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (H1) from MT5...
+[2026-07-18 16:13:07] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H1.csv
+[2026-07-18 16:13:07] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H1.json
+[2026-07-18 16:13:07] [INFO] [market_data_exporter] --- Exporting EURUSD (H4) ---
+[2026-07-18 16:13:07] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (H4) from MT5...
+[2026-07-18 16:13:12] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H4.csv
+[2026-07-18 16:13:12] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\H4.json
+[2026-07-18 16:13:12] [INFO] [market_data_exporter] --- Exporting EURUSD (D1) ---
+[2026-07-18 16:13:12] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for EURUSDc (D1) from MT5...
+[2026-07-18 16:13:36] [INFO] [market_data_exporter.utils] Successfully exported 3862 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\D1.csv
+[2026-07-18 16:13:36] [INFO] [market_data_exporter.utils] Successfully exported 3862 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\EURUSD\D1.json
+[2026-07-18 16:13:36] [INFO] [market_data_exporter] --- Exporting DXY (M1) ---
+[2026-07-18 16:13:36] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M1) from MT5...
+[2026-07-18 16:13:36] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:36] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M1)...
+[2026-07-18 16:13:37] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.mt5_client] Generating 5000 synthetic bars for DX-Y.NYB (M1)...
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.csv
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.json
+[2026-07-18 16:13:38] [INFO] [market_data_exporter] --- Exporting DXY (M5) ---
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M5) from MT5...
+[2026-07-18 16:13:38] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M5): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M5)...
+[2026-07-18 16:13:38] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.csv
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.json
+[2026-07-18 16:13:39] [INFO] [market_data_exporter] --- Exporting DXY (M15) ---
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M15) from MT5...
+[2026-07-18 16:13:39] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M15): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M15)...
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.utils] Successfully exported 4552 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.csv
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.utils] Successfully exported 4552 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.json
+[2026-07-18 16:13:39] [INFO] [market_data_exporter] --- Exporting DXY (H1) ---
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (H1) from MT5...
+[2026-07-18 16:13:39] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H1)...
+[2026-07-18 16:13:39] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 1197 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.csv
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 1197 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] --- Exporting DXY (H4) ---
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (H4) from MT5...
+[2026-07-18 16:13:40] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H4): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H4)...
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 1197 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.csv
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 1197 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] --- Exporting DXY (D1) ---
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (D1) from MT5...
+[2026-07-18 16:13:40] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (D1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (D1)...
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB...
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.csv
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M1  ) -> 5000 bars | Files: M1.csv, M1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M5  ) -> 5000 bars | Files: M5.csv, M5.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M15 ) -> 5000 bars | Files: M15.csv, M15.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H1  ) -> 5000 bars | Files: H1.csv, H1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H4  ) -> 5000 bars | Files: H4.csv, H4.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (D1  ) -> 3850 bars | Files: D1.csv, D1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M1  ) -> 5000 bars | Files: M1.csv, M1.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M5  ) -> 5000 bars | Files: M5.csv, M5.json
+[2026-07-18 16:13:40] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (M15 ) -> 5000 bars | Files: M15.csv, M15.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (H1  ) -> 5000 bars | Files: H1.csv, H1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (H4  ) -> 5000 bars | Files: H4.csv, H4.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] GBPUSD   (D1  ) -> 3862 bars | Files: D1.csv, D1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M1  ) -> 5000 bars | Files: M1.csv, M1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M5  ) -> 5000 bars | Files: M5.csv, M5.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (M15 ) -> 5000 bars | Files: M15.csv, M15.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (H1  ) -> 5000 bars | Files: H1.csv, H1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (H4  ) -> 5000 bars | Files: H4.csv, H4.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] EURUSD   (D1  ) -> 3862 bars | Files: D1.csv, D1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (M1  ) -> 5000 bars | Files: M1.csv, M1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (M5  ) -> 5000 bars | Files: M5.csv, M5.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (M15 ) -> 4552 bars | Files: M15.csv, M15.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (H1  ) -> 1197 bars | Files: H1.csv, H1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (H4  ) -> 1197 bars | Files: H4.csv, H4.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] [SUCCESS] DXY      (D1  ) -> 5000 bars | Files: D1.csv, D1.json
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] Completed 24/24 export tasks successfully.
+[2026-07-18 16:13:41] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Target Symbols: ['DXY']
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Target Timeframes: ['M1', 'M5', 'M15', 'H1', 'H4', 'D1']
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Bars per request: 5000
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:19:39] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 16:19:39] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 16:19:39] [INFO] [market_data_exporter] --- Exporting DXY (M1) ---
+[2026-07-18 16:19:39] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M1) from MT5...
+[2026-07-18 16:19:39] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:39] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M1)...
+[2026-07-18 16:19:41] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=1m)...
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.mt5_client] Generating 5000 synthetic bars for DX-Y.NYB (M1)...
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.csv
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.json
+[2026-07-18 16:19:42] [INFO] [market_data_exporter] --- Exporting DXY (M5) ---
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M5) from MT5...
+[2026-07-18 16:19:42] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M5): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M5)...
+[2026-07-18 16:19:42] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=5m)...
+[2026-07-18 16:19:43] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.csv
+[2026-07-18 16:19:43] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.json
+[2026-07-18 16:19:43] [INFO] [market_data_exporter] --- Exporting DXY (M15) ---
+[2026-07-18 16:19:43] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (M15) from MT5...
+[2026-07-18 16:19:43] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (M15): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:43] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (M15)...
+[2026-07-18 16:19:43] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=15m)...
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.utils] Successfully exported 4552 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.csv
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.utils] Successfully exported 4552 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.json
+[2026-07-18 16:19:44] [INFO] [market_data_exporter] --- Exporting DXY (H1) ---
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (H1) from MT5...
+[2026-07-18 16:19:44] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H1)...
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=1h)...
+[2026-07-18 16:19:44] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.csv
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.json
+[2026-07-18 16:19:45] [INFO] [market_data_exporter] --- Exporting DXY (H4) ---
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (H4) from MT5...
+[2026-07-18 16:19:45] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (H4): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (H4)...
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=1h)...
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Resampling 1h data into 4h OHLCV candles...
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.utils] Successfully exported 3727 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.csv
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.utils] Successfully exported 3727 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.json
+[2026-07-18 16:19:45] [INFO] [market_data_exporter] --- Exporting DXY (D1) ---
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Fetching 5000 bars for DX-Y.NYB (D1) from MT5...
+[2026-07-18 16:19:45] [WARNING] [market_data_exporter.mt5_client] No rates returned from MT5 for DX-Y.NYB (D1): (-1, 'Terminal: Call failed'). Using Fallback.
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Fetching fallback data for DX-Y.NYB (D1)...
+[2026-07-18 16:19:45] [INFO] [market_data_exporter.mt5_client] Downloading from Yahoo Finance for DX-Y.NYB (interval=1d)...
+[2026-07-18 16:19:46] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.csv
+[2026-07-18 16:19:46] [INFO] [market_data_exporter.utils] Successfully exported 5000 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (M1  ) -> 5000 bars | Files: M1.csv, M1.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (M5  ) -> 5000 bars | Files: M5.csv, M5.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (M15 ) -> 4552 bars | Files: M15.csv, M15.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (H1  ) -> 5000 bars | Files: H1.csv, H1.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (H4  ) -> 3727 bars | Files: H4.csv, H4.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] [SUCCESS] DXY      (D1  ) -> 5000 bars | Files: D1.csv, D1.json
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] Completed 6/6 export tasks successfully.
+[2026-07-18 16:19:46] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Starting MT5 Market Data Exporter Batch Job
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Target Symbols: ['XAUUSD']
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Target Timeframes: ['M1', 'M5', 'M15', 'H1', 'H4', 'D1']
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Bars per request: 50
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Export Formats: ['csv', 'json']
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] Output Directory: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Initializing connection to MetaTrader 5 Terminal...
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Connected to MT5 Terminal: MetaTrader 5 (MetaQuotes Ltd.)
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] --- Exporting XAUUSD (M1) ---
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (M1) from MT5...
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.csv
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.json
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] --- Exporting XAUUSD (M5) ---
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (M5) from MT5...
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.csv
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.json
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] --- Exporting XAUUSD (M15) ---
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (M15) from MT5...
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.csv
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.json
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] --- Exporting XAUUSD (H1) ---
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (H1) from MT5...
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.json
+[2026-07-18 16:25:43] [INFO] [market_data_exporter] --- Exporting XAUUSD (H4) ---
+[2026-07-18 16:25:43] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (H4) from MT5...
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.csv
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] --- Exporting XAUUSD (D1) ---
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.mt5_client] Fetching 50 bars for XAUUSDc (D1) from MT5...
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.csv
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Successfully exported 50 rows to: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Generated symbol metadata: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\metadata.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.utils] Generated global manifest catalog: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\manifest.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter.mt5_client] Disconnected from MetaTrader 5 Terminal.
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] 
+============================================================
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] MARKET DATA EXPORT SUMMARY
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] ============================================================
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M1  ) -> 50 bars | Files: M1.csv, M1.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M5  ) -> 50 bars | Files: M5.csv, M5.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (M15 ) -> 50 bars | Files: M15.csv, M15.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H1  ) -> 50 bars | Files: H1.csv, H1.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (H4  ) -> 50 bars | Files: H4.csv, H4.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] [SUCCESS] XAUUSD   (D1  ) -> 50 bars | Files: D1.csv, D1.json
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] ------------------------------------------------------------
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] Completed 6/6 export tasks successfully.
+[2026-07-18 16:25:44] [INFO] [market_data_exporter] ============================================================

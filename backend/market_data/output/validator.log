@@ -1,0 +1,18 @@
+[2026-07-18 16:30:19] [INFO] [market_data_validator] ============================================================
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Starting Data Quality Validation for ['XAUUSD', 'DXY']
+[2026-07-18 16:30:19] [INFO] [market_data_validator] ============================================================
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M1.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M5.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\M15.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H1.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\H4.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\D1.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Generated validation report for XAUUSD: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\XAUUSD\validation_report.json
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M1.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M5.csv
+[2026-07-18 16:30:19] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\M15.csv
+[2026-07-18 16:30:20] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H1.csv
+[2026-07-18 16:30:20] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\H4.csv
+[2026-07-18 16:30:20] [INFO] [market_data_validator] Validating file: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\D1.csv
+[2026-07-18 16:30:20] [INFO] [market_data_validator] Generated validation report for DXY: C:\Users\weepl\Documents\Projects\Trading Intelligence Core\backend\market_data\output\DXY\validation_report.json
+[2026-07-18 16:30:20] [INFO] [market_data_validator] Data Validation completed successfully.

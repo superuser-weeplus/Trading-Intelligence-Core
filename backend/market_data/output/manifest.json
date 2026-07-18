@@ -1,0 +1,20 @@
+{
+  "generator": "Trading Intelligence Core MT5 Market Data Exporter",
+  "version": "1.1",
+  "generated_at": "2026-07-18T16:32:09.738352",
+  "total_symbols": 1,
+  "exported_symbols": [
+    "XAUUSD"
+  ],
+  "datasets": [
+    {
+      "symbol": "XAUUSD",
+      "metadata_file": "XAUUSD/metadata.json",
+      "timeframes_available": [
+        "H1"
+      ],
+      "total_bars": 100,
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Pyrefly Configuration for Backend
+# Documentation: https://pyrefly.org
+
+# Paths to include for static type checking
+project-includes = [
+    "app",
+    "tests"
+]
+
+# Paths to exclude from type checking
+project-excludes = [
+    "**/__pycache__",
+    ".venv",
+    "alembic/versions"
+]
+
+# Targeted Python version
+python-version = "3.11"
+
+# Type checking strictness and inference options
+check-unannotated-defs = true
+infer-return-types = true

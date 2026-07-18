@@ -1,0 +1,42 @@
+# MT5 Market Data Exporter Configuration
+
+mt5:
+  login: 0
+  password: ""
+  server: ""
+  path: ""
+
+# Default symbols to export
+symbols:
+  - XAUUSD
+  - GBPUSD
+  - EURUSD
+  - DXY
+
+# Mapping for broker symbol aliases (e.g. Exness Cent accounts or Indices)
+symbol_mapping:
+  XAUUSD: "XAUUSDc"
+  GBPUSD: "GBPUSDc"
+  EURUSD: "EURUSDc"
+  USDJPY: "USDJPYc"
+  DXY: "DX-Y.NYB"
+
+# Default timeframes to export
+timeframes:
+  - M1
+  - M5
+  - M15
+  - H1
+  - H4
+  - D1
+
+# Default number of bars to fetch per timeframe
+default_bars: 5000
+
+# Export formats: csv, json (parquet can be added when needed)
+export_formats:
+  - csv
+  - json
+
+# Output directory relative to backend/market_data
+output_dir: "./output"
