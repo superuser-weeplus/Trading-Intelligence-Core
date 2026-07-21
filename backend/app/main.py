@@ -66,21 +66,27 @@ from app.api.v1.monitor_router import router as monitor_router_v1
 app.include_router(monitor_router_v1)
 
 # Legacy backward compatibility endpoints (redirecting to v1)
+from app.api.deps import get_monitor_service, get_market_service
+
 @app.get("/api/monitor/health")
-def legacy_get_monitor_health(db: Session = Depends(get_local_db)):
-    return MonitorService(db).get_system_health()
+def legacy_get_monitor_health(service: MonitorService = Depends(get_monitor_service)):
+    return service.get_system_health()
 
 @app.get("/api/monitor/explorer")
-def legacy_get_monitor_explorer(symbol: str = Query("XAUUSD"), timeframe: str = Query("H1"), db: Session = Depends(get_local_db)):
-    return MonitorService(db).get_data_explorer(symbol, timeframe)
+def legacy_get_monitor_explorer(
+    symbol: str = Query("XAUUSD"),
+    timeframe: str = Query("H1"),
+    service: MonitorService = Depends(get_monitor_service)
+):
+    return service.get_data_explorer(symbol, timeframe)
 
 @app.get("/api/monitor/history")
-def legacy_get_monitor_history(db: Session = Depends(get_local_db)):
-    return MonitorService(db).get_export_history()
+def legacy_get_monitor_history(service: MonitorService = Depends(get_monitor_service)):
+    return service.get_export_history()
 
 @app.get("/api/monitor/quality")
-def legacy_get_monitor_quality(db: Session = Depends(get_local_db)):
-    return MonitorService(db).get_data_quality()
+def legacy_get_monitor_quality(service: MonitorService = Depends(get_monitor_service)):
+    return service.get_data_quality()
 
 # --- Market Data Routes ---
 
@@ -89,11 +95,10 @@ def sync_market_data(
     symbol: str = Query(..., description="e.g. EURUSD, GBPUSD, DXY"),
     timeframe: str = Query("H1", description="M1, M5, H1, D1"),
     count: int = Query(500, description="Number of historical candles to fetch"),
-    db: Session = Depends(get_local_db)
+    service: MarketService = Depends(get_market_service)
 ):
     try:
         mapped_symbol = translate_symbol(symbol)
-        service = MarketService(db)
         new_records = service.sync_market_data(mapped_symbol, timeframe, count)
         return {"success": True, "message": f"Synced {new_records} new bars for {symbol} ({timeframe})"}
     except Exception as e:
@@ -104,11 +109,10 @@ def get_prices(
     symbol: str = Query(..., description="EURUSD, GBPUSD, DXY"),
     timeframe: str = Query("H1"),
     limit: int = Query(500),
-    db: Session = Depends(get_local_db)
+    service: MarketService = Depends(get_market_service)
 ):
     try:
         mapped_symbol = translate_symbol(symbol)
-        service = MarketService(db)
         return service.get_prices(mapped_symbol, timeframe, limit)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -119,11 +123,10 @@ def get_prices(
 def get_indicators(
     symbol: str = Query(...),
     timeframe: str = Query("H1"),
-    db: Session = Depends(get_local_db)
+    service: MarketService = Depends(get_market_service)
 ):
     try:
         mapped_symbol = translate_symbol(symbol)
-        service = MarketService(db)
         return service.get_indicators(mapped_symbol, timeframe)
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))

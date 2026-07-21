@@ -3,93 +3,70 @@ import json
 import time
 import logging
 import pandas as pd
-from datetime import datetime
-from typing import Dict, Any, List
-from sqlalchemy.orm import Session
-from app.repositories.base_repository import BaseRepository
-from app.database.models import DatasetManifest, PriceHistory
+from typing import Dict, Any, List, Optional
+
+from app.repositories.interfaces.base_monitor_repository import BaseMonitorRepository
+from app.repositories.interfaces.base_price_repository import BasePriceRepository
+from app.repositories.csv.csv_price_repository import CSVPriceRepository
+from app.services.trend_service import TrendService
+from app.core.exceptions import RepositoryException
 
 logger = logging.getLogger("app.repositories.monitor_repository")
 
-class MonitorRepository:
+class MonitorRepository(BaseMonitorRepository):
     """
-    Repository Layer for Data Monitor Metrics.
-    Decouples services from raw file formats, preferring Database tables with JSON fallback.
+    Concrete Implementation of BaseMonitorRepository.
+    Decouples monitor data reading from raw file formats via caching and PriceRepository delegation.
     """
-    def __init__(self, db: Session = None):
-        self.db = db
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        self.output_dir = os.path.abspath(os.path.join(base_dir, "..", "..", "market_data", "output"))
 
-    def check_mt5_latency(self) -> Dict[str, Any]:
-        """
-        Pings MT5 Terminal and measures connection latency in milliseconds.
-        """
-        start = time.perf_counter()
-        connected = False
+    def __init__(
+        self,
+        output_dir: Optional[str] = None,
+        price_repo: Optional[BasePriceRepository] = None,
+        cache_ttl_seconds: int = 5
+    ):
+        if output_dir:
+            self.output_dir = output_dir
+        else:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            self.output_dir = os.path.abspath(os.path.join(base_dir, "..", "..", "market_data", "output"))
+        self.price_repo = price_repo if price_repo else CSVPriceRepository(self.output_dir)
+        self.cache_ttl = cache_ttl_seconds
+        self._cache: Dict[str, Dict[str, Any]] = {}
+
+    def _read_json_cached(self, file_path: str) -> Dict[str, Any]:
+        now = time.time()
+        if file_path in self._cache:
+            entry = self._cache[file_path]
+            if now - entry["timestamp"] < self.cache_ttl:
+                return entry["data"]
+
+        if not os.path.exists(file_path):
+            return {}
+
         try:
-            import MetaTrader5 as mt5
-            if mt5.initialize():
-                connected = True
-                mt5.shutdown()
-        except Exception:
-            connected = False
-
-        latency_ms = int((time.perf_counter() - start) * 1000)
-        return {
-            "status": "connected" if connected else "disconnected",
-            "latency_ms": latency_ms if connected else 0
-        }
-
-    def check_db_latency(self) -> Dict[str, Any]:
-        """
-        Pings Database (Supabase Cloud / SQLite) and measures connection latency in milliseconds.
-        """
-        start = time.perf_counter()
-        connected = False
-        try:
-            if self.db:
-                self.db.execute("SELECT 1")
-                connected = True
-            else:
-                from app.database.connection import LocalSessionLocal
-                session = LocalSessionLocal()
-                session.execute("SELECT 1")
-                session.close()
-                connected = True
-        except Exception:
-            connected = False
-
-        latency_ms = int((time.perf_counter() - start) * 1000)
-        return {
-            "status": "connected" if connected else "disconnected",
-            "latency_ms": latency_ms if connected else 0
-        }
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            self._cache[file_path] = {"data": data, "timestamp": now}
+            return data
+        except Exception as e:
+            logger.warning(f"Failed to read JSON at {file_path}: {e}")
+            return {}
 
     def get_summary_metrics(self) -> Dict[str, Any]:
-        """
-        Calculates global summary metrics across all exported datasets.
-        """
-        manifest_path = os.path.join(self.output_dir, "manifest.json")
         symbols = ["XAUUSD", "GBPUSD", "EURUSD", "DXY"]
         total_candles = 0
         datasets_count = 0
 
-        # Read datasets & calculate total candles
         for sym in symbols:
             val_path = os.path.join(self.output_dir, sym, "validation_report.json")
-            if os.path.exists(val_path):
-                try:
-                    with open(val_path, "r", encoding="utf-8") as f:
-                        val_data = json.load(f)
-                        for tf, tf_data in val_data.get("timeframes", {}).items():
-                            total_candles += tf_data.get("final_clean_rows", 0)
-                            datasets_count += 1
-                except Exception:
-                    pass
+            val_data = self._read_json_cached(val_path)
+            for tf, tf_data in val_data.get("timeframes", {}).items():
+                total_candles += tf_data.get("final_clean_rows", 0)
+                datasets_count += 1
 
         if total_candles == 0:
-            total_candles = 113727  # Default sample count if empty
+            total_candles = 113727
 
         return {
             "symbols": len(symbols),
@@ -100,51 +77,152 @@ class MonitorRepository:
         }
 
     def get_market_snapshot(self) -> List[Dict[str, Any]]:
-        """
-        Calculates Today's Market Snapshot widget data (Price, Last Update, H1 & H4 Trend).
-        """
         symbols = ["XAUUSD", "GBPUSD", "EURUSD", "DXY"]
         snapshot = []
 
         for sym in symbols:
-            h1_path = os.path.join(self.output_dir, sym, "H1.csv")
-            h4_path = os.path.join(self.output_dir, sym, "H4.csv")
+            h1_candles = self.price_repo.get_candles(sym, "H1", limit=30)
+            h4_candles = self.price_repo.get_candles(sym, "H4", limit=30)
 
-            price = 4032.50 if sym == "XAUUSD" else (1.2750 if sym == "GBPUSD" else (1.0850 if sym == "EURUSD" else 104.20))
+            latest_price = self.price_repo.get_latest_price(sym, "H1")
             last_update = "16:13"
-            h1_trend = "Bullish"
-            h4_trend = "Bullish"
-
-            if os.path.exists(h1_path):
+            if h1_candles:
+                raw_ts = h1_candles[-1]["timestamp"]
                 try:
-                    df = pd.read_csv(h1_path)
-                    if not df.empty:
-                        price = round(float(df['close'].iloc[-1]), 2)
-                        dt = pd.to_datetime(df['timestamp'].iloc[-1])
-                        last_update = dt.strftime("%H:%M")
-                        
-                        # Trend calculation from SMA 20
-                        if len(df) >= 20:
-                            sma20 = df['close'].rolling(20).mean().iloc[-1]
-                            h1_trend = "Bullish" if price >= sma20 else "Bearish"
+                    dt = pd.to_datetime(raw_ts)
+                    last_update = dt.strftime("%H:%M")
                 except Exception:
                     pass
 
-            if os.path.exists(h4_path):
-                try:
-                    df4 = pd.read_csv(h4_path)
-                    if not df4.empty and len(df4) >= 20:
-                        sma20_h4 = df4['close'].rolling(20).mean().iloc[-1]
-                        h4_trend = "Bullish" if float(df4['close'].iloc[-1]) >= sma20_h4 else "Bearish"
-                except Exception:
-                    pass
+            h1_closes = [c["close"] for c in h1_candles]
+            h4_closes = [c["close"] for c in h4_candles]
 
-            snapshot.append({
-                "symbol": sym,
-                "price": price,
-                "last_update": last_update,
-                "h1_trend": h1_trend,
-                "h4_trend": h4_trend
-            })
+            sma20_h1 = TrendService.calculate_sma(h1_closes, 20)
+            sma20_h4 = TrendService.calculate_sma(h4_closes, 20)
+
+            curr_price = latest_price if latest_price is not None else TrendService.get_fallback_price(sym)
+            h1_trend = TrendService.determine_trend(curr_price, sma20_h1)
+            h4_trend = TrendService.determine_trend(curr_price, sma20_h4)
+
+            snapshot.append(TrendService.format_snapshot_item(
+                symbol=sym,
+                price=curr_price,
+                last_update=last_update,
+                h1_trend=h1_trend,
+                h4_trend=h4_trend
+            ))
 
         return snapshot
+
+    def get_data_explorer(self, symbol: str = "XAUUSD", timeframe: str = "H1") -> Dict[str, Any]:
+        sym_str = symbol.upper()
+        tf_str = timeframe.upper()
+        candles = self.price_repo.get_candles(sym_str, tf_str, limit=50000)
+
+        if not candles:
+            return {
+                "symbol": sym_str, "timeframe": tf_str, "rows": 0,
+                "first": "N/A", "last": "N/A", "missing": 0, "duplicate": 0,
+                "freshness": "N/A", "last_updated": "N/A"
+            }
+
+        first_date = str(candles[0]["timestamp"])[:10]
+        last_date = str(candles[-1]["timestamp"])[:10]
+
+        val_report_path = os.path.join(self.output_dir, sym_str, "validation_report.json")
+        val_data = self._read_json_cached(val_report_path)
+        tf_info = val_data.get("timeframes", {}).get(tf_str, {})
+
+        missing_count = tf_info.get("missing_gaps_detected", 0)
+        duplicate_count = tf_info.get("duplicate_rows_removed", 0)
+
+        csv_path = os.path.join(self.output_dir, sym_str, f"{tf_str}.csv")
+        last_updated_str = "N/A"
+        freshness = "N/A"
+
+        if os.path.exists(csv_path):
+            mtime = os.path.getmtime(csv_path)
+            last_updated_dt = datetime.fromtimestamp(mtime)
+            last_updated_str = last_updated_dt.strftime("%Y-%m-%d %H:%M")
+            diff_seconds = (datetime.now() - last_updated_dt).total_seconds()
+            if diff_seconds < 60:
+                freshness = "Just now"
+            elif diff_seconds < 3600:
+                mins = int(diff_seconds // 60)
+                freshness = f"{mins} minute{'s' if mins > 1 else ''} ago"
+            elif diff_seconds < 86400:
+                hours = int(diff_seconds // 3600)
+                freshness = f"{hours} hour{'s' if hours > 1 else ''} ago"
+            else:
+                days = int(diff_seconds // 86400)
+                freshness = f"{days} day{'s' if days > 1 else ''} ago"
+
+        return {
+            "symbol": sym_str,
+            "timeframe": tf_str,
+            "rows": len(candles),
+            "first": first_date,
+            "last": last_date,
+            "missing": missing_count,
+            "duplicate": duplicate_count,
+            "freshness": freshness,
+            "last_updated": last_updated_str
+        }
+
+    def get_export_history(self) -> List[Dict[str, Any]]:
+        history = []
+        manifest_path = os.path.join(self.output_dir, "manifest.json")
+        manifest = self._read_json_cached(manifest_path)
+        if not manifest:
+            return history
+
+        gen_time = manifest.get("generated_at", "")
+        time_str = "16:13"
+        if gen_time:
+            try:
+                time_str = pd.to_datetime(gen_time).strftime("%H:%M")
+            except Exception:
+                pass
+
+        for ds in manifest.get("datasets", []):
+            sym = ds.get("symbol")
+            meta_path = os.path.join(self.output_dir, sym, "metadata.json")
+            meta = self._read_json_cached(meta_path)
+            for tf, tf_data in meta.get("timeframes", {}).items():
+                history.append({
+                    "time": time_str,
+                    "symbol": sym,
+                    "tf": tf,
+                    "bars": tf_data.get("bars", 0),
+                    "status": "✅"
+                })
+
+        return history
+
+    def get_data_quality(self) -> List[Dict[str, Any]]:
+        quality_list = []
+        symbols = ["XAUUSD", "GBPUSD", "EURUSD", "DXY"]
+
+        for sym in symbols:
+            val_path = os.path.join(self.output_dir, sym, "validation_report.json")
+            val_data = self._read_json_cached(val_path)
+            tf_map = val_data.get("timeframes", {})
+
+            score = 100
+            scores = [v.get("health_score", 100) for v in tf_map.values()]
+            if scores:
+                score = int(sum(scores) / len(scores))
+
+            duplicates = sum(v.get("duplicate_rows_removed", 0) for v in tf_map.values())
+            gaps = sum(v.get("missing_gaps_detected", 0) for v in tf_map.values())
+
+            quality_list.append({
+                "symbol": sym,
+                "score": score,
+                "duplicates": duplicates,
+                "gaps": gaps,
+                "resampled": "Yes" if sym == "DXY" else "No",
+                "timezone": "UTC"
+            })
+
+        return quality_list

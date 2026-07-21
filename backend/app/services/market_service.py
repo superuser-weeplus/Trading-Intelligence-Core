@@ -1,97 +1,84 @@
+import math
 import pandas as pd
-from sqlalchemy.orm import Session
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from app.repositories.price_repository import PriceRepository
+from app.repositories.interfaces.base_price_repository import BasePriceRepository
 from app.data_collector.collector import MT5Collector
 from app.indicator_engine.indicators import TechnicalIndicators
-from app.database.models import PriceHistory
+from app.core.exceptions import DataNotFoundException
 
 class MarketService:
-    def __init__(self, db: Session):
-        self.repo = PriceRepository(db)
-        self.collector = MT5Collector()
+    """
+    Market Data Service.
+    Interacts strictly via constructor-injected BasePriceRepository abstraction.
+    """
+
+    def __init__(self, price_repo: BasePriceRepository, collector: Optional[MT5Collector] = None):
+        self.repo = price_repo
+        self.collector = collector if collector else MT5Collector()
 
     def sync_market_data(self, symbol: str, timeframe: str, count: int = 500) -> int:
         """
-        Synchronizes historical candles from MT5 or Yahoo Finance and saves to local SQLite.
+        Synchronizes historical candles from MT5 or Yahoo Finance and saves to repository.
         """
-        # Fetch rates from collector
         df = self.collector.fetch_historical_data(symbol, timeframe, count)
         
+        candles_to_save = []
         new_records = 0
         for _, row in df.iterrows():
             timestamp = row['timestamp']
             if isinstance(timestamp, str):
                 timestamp = datetime.fromisoformat(timestamp)
                 
-            # Deduplicate using repository
             exists = self.repo.check_exists(symbol, timeframe, timestamp)
             if not exists:
-                price_record = PriceHistory(
-                    symbol=symbol,
-                    timeframe=timeframe,
-                    timestamp=timestamp,
-                    open=float(row['open']),
-                    high=float(row['high']),
-                    low=float(row['low']),
-                    close=float(row['close']),
-                    volume=float(row['volume']),
-                    spread=float(row['spread'])
-                )
-                self.repo.create(price_record)
+                candles_to_save.append({
+                    "timestamp": timestamp.isoformat() if isinstance(timestamp, datetime) else str(timestamp),
+                    "open": float(row['open']),
+                    "high": float(row['high']),
+                    "low": float(row['low']),
+                    "close": float(row['close']),
+                    "volume": float(row['volume']),
+                    "spread": float(row['spread'])
+                })
                 new_records += 1
-                
+
+        if candles_to_save:
+            self.repo.save_candles(candles_to_save, symbol=symbol, timeframe=timeframe)
+
         return new_records
 
     def get_prices(self, symbol: str, timeframe: str, limit: int = 500) -> List[Dict[str, Any]]:
         """
-        Returns price candles. If empty, automatically triggers sync.
+        Returns price candles via repository. Automatically syncs if empty.
         """
-        prices = self.repo.get_prices(symbol, timeframe, limit)
+        prices = self.repo.get_candles(symbol, timeframe, limit)
         if not prices:
             self.sync_market_data(symbol, timeframe, limit)
-            prices = self.repo.get_prices(symbol, timeframe, limit)
+            prices = self.repo.get_candles(symbol, timeframe, limit)
 
-        return [{
-            "timestamp": p.timestamp.isoformat(),
-            "open": p.open,
-            "high": p.high,
-            "low": p.low,
-            "close": p.close,
-            "volume": p.volume,
-            "spread": p.spread
-        } for p in prices]
+        return prices
 
     def get_indicators(self, symbol: str, timeframe: str) -> List[Dict[str, Any]]:
         """
-        Retrieves prices from repository and calculates indicators on-the-fly.
+        Retrieves prices from repository and calculates indicators.
         """
-        prices = self.repo.get_prices(symbol, timeframe, 500)
+        prices = self.repo.get_candles(symbol, timeframe, 500)
         if not prices:
-            raise ValueError(f"No historical price data found for {symbol} ({timeframe}). Sync first.")
+            raise DataNotFoundException(f"No historical price data found for {symbol} ({timeframe}). Sync first.")
 
-        df = pd.DataFrame([{
-            "timestamp": p.timestamp,
-            "open": p.open,
-            "high": p.high,
-            "low": p.low,
-            "close": p.close,
-            "volume": p.volume
-        } for p in prices])
+        df = pd.DataFrame(prices)
+        if "timestamp" in df.columns:
+            df["timestamp"] = pd.to_datetime(df["timestamp"])
 
-        # Calculate indicators on the fly
         df_ind = TechnicalIndicators.apply_all(df)
         
-        import math
-        # Convert df rows to list of dicts
         last_rows = df_ind.tail(100).to_dict(orient="records")
         for r in last_rows:
-            if isinstance(r.get('timestamp'), datetime):
+            if isinstance(r.get('timestamp'), (datetime, pd.Timestamp)):
                 r['timestamp'] = r['timestamp'].isoformat()
             
-            # replace NaN floats with None for JSON compliance
             for key, value in r.items():
                 if isinstance(value, float) and math.isnan(value):
                     r[key] = None
